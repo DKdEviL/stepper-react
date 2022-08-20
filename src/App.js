@@ -6,18 +6,19 @@ import Container from "@mui/material/Container";
 import StepContent from "@mui/material/StepContent";
 import "./App.css";
 import NameComponent from "./components/name/NameComponent";
-import WorkSpaceComponent from "./components/name/workspace/WorkSpaceComponent";
+import WorkSpaceComponent from "./components/workspace/WorkSpaceComponent";
 
 const steps = ["", "", "", ""];
 function App() {
   const [activeStep, setActiveStep] = useState(0);
   const [userName, setUserName] = useState({ fullName: "", displayName: "" });
+  const [workspace, setWorkspace] = useState({name: '', url: ''});
 
   useEffect(() => {
-    if (userName.fullName && userName.displayName) {
+    if ((userName.fullName && userName.displayName) || workspace.name) {
       setActiveStep(activeStep + 1);
     }
-  }, [userName]);
+  }, [userName, workspace]);
 
   return (
     <Container maxWidth="sm">
@@ -29,7 +30,7 @@ function App() {
         ))}
       </Stepper>
       {activeStep === 0 && <NameComponent updateUserName={setUserName} />}
-      {activeStep === 1 && <WorkSpaceComponent />}
+      {activeStep === 1 && <WorkSpaceComponent updateWorkspace={setWorkspace} />}
     </Container>
   );
 }
