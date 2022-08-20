@@ -3,7 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { createTheme } from '@mui/material/styles';
+export const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#664de5'
+    },
+  },
+});
+// #664de5
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

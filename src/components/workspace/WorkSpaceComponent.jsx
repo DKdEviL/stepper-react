@@ -34,7 +34,7 @@ const WorkSpaceComponent = (props) => {
           value={name}
             onChange={(e) => {setName(e.target.value)}}
             fullWidth
-            margin="normal"
+            margin="dense"
             placeholder="Eden"
             id="workspaceName-input"
           />

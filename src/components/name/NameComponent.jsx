@@ -63,7 +63,7 @@ const NameComponent = (props) => {
           <InputLabel shrink htmlFor="bootstrap-input">
             FullName
           </InputLabel>
-          <BootstrapInput value={username} onChange={(e) => setUsername(e.target.value)} fullWidth margin="normal" placeholder="Steve Jobs" id="fullName-input" />
+          <BootstrapInput value={username} onChange={(e) => setUsername(e.target.value)} fullWidth margin="dense" placeholder="Steve Jobs" id="fullName-input" />
         </FormControl>
         <FormControl fullWidth margin="normal" variant="standard">
           <InputLabel shrink htmlFor="bootstrap-input">

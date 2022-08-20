@@ -8,6 +8,7 @@ import "./App.css";
 import NameComponent from "./components/name/NameComponent";
 import WorkSpaceComponent from "./components/workspace/WorkSpaceComponent";
 import UsecaseComponent from "./components/usecase/UsecaseComponent";
+import WelcomeComponent from "./components/welcome/WelcomeComponent";
 
 const steps = ["", "", "", ""];
 const appUsers = [
@@ -21,7 +22,7 @@ const appUsers = [
   }
 ]
 function App() {
-  const [activeStep, setActiveStep] = useState(2);
+  const [activeStep, setActiveStep] = useState(0);
   const [userName, setUserName] = useState({ fullName: "", displayName: "" });
   const [workspace, setWorkspace] = useState({name: '', url: ''});
   const [userSelected, setUserSelected] = useState(null);
@@ -38,10 +39,10 @@ function App() {
   }
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" sx={{height:'100vh'}} classes={{root: 'flex flex-column justify-center align-center'}}>
       <Stepper activeStep={activeStep} alternativeLabel>
-        {steps.map((label) => (
-          <Step key={label}>
+        {steps.map((label,index) => (
+          <Step key={label+index}>
             <StepLabel>{label}</StepLabel>
           </Step>
         ))}
@@ -50,6 +51,9 @@ function App() {
       {activeStep === 1 && <WorkSpaceComponent updateWorkspace={setWorkspace} />}
       {
         activeStep === 2 && <UsecaseComponent userTypes={appUsers} createSpaceHandler={handleCreateWorkspaceClick} selectedUser={userSelected} updateSelectedUser={setUserSelected} />
+      }
+      {
+        activeStep >= 3 && <WelcomeComponent userName={userName.displayName} />
       }
     </Container>
   );
