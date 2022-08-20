@@ -1,7 +1,21 @@
-.App {
-  text-align: center;
+body * {
+  font-family: 'Inter', sans-serif !important;
 }
-
+.font-bold {
+  font-weight: bold !important;
+}
+.color-black {
+  color: black !important;
+}
+.color-primary {
+  color: #664de5 !important;
+}
+.bg-primary {
+  background: #664de5 !important;
+}
+.bgColor-primary {
+  background-color: #664de5 !important;
+}
 .flex {
   display: flex !important;
 }

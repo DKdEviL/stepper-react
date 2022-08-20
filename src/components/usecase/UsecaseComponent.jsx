@@ -22,7 +22,7 @@ const UsecaseComponent = (props) => {
     setSelectedIndex(index);
   };
   return (
-    <Paper elevation={0}>
+    <Paper elevation={0} sx={{width: '90%'}}>
         <Stack
         component="form"
         sx={{
@@ -65,6 +65,7 @@ const UsecaseComponent = (props) => {
       <Button
           onClick={() => props.createSpaceHandler()}
           fullWidth
+          sx={{backgroundColor: '#664de5'}}
           margin="normal"
           variant="contained"
         >

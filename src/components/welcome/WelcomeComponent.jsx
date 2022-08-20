@@ -10,7 +10,7 @@ import './Welcome.css';
 
 const WelcomeComponent = (props) => {
   return (
-    <Paper elevation={0}>
+    <Paper elevation={0} sx={{width: '90%', marginTop: '2rem'}}>
       <Stack
         component="form"
         sx={{
@@ -25,10 +25,10 @@ const WelcomeComponent = (props) => {
             <Icon sx={{ width: '48px', height: '48px', background: '#664de5', borderRadius: '50%'}} className='iconContainer flex justify-center align-center'>
                 <DoneOutlinedIcon fontSize="medium" sx={{color: '#fff'}} />
             </Icon>
-            <Typography variant="h5" component="div">
+            <Typography variant="h5" component="div" mt={2} mb={1}>
               Congratulations, {props.userName}
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" mt={1} mb={2}>
               You have completed onboarding, you can start using the Eden!
             </Typography>
           </CardContent>
@@ -36,6 +36,7 @@ const WelcomeComponent = (props) => {
         <Button
           onClick={() => {}}
           fullWidth
+          sx={{backgroundColor: '#664de5'}}
           margin="normal"
           variant="contained"
         >

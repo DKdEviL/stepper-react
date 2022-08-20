@@ -2,11 +2,14 @@
 .userList {
     display: flex;
     justify-content: space-between;
-    
+
 }
 .userList .selectedItem {
     background-color: transparent !important;
 }
+.cardContainer {
+    height: 200px;
+}
 .userList .selectedItem .cardContainer {
-    border: 1px solid red;
+    border: 1px solid #664de5;
 }

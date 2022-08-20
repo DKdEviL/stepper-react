@@ -14,7 +14,7 @@ export const BootstrapInput = styled(InputBase)(({ theme }) => ({
   "& .MuiInputBase-input": {
     borderRadius: 4,
     position: "relative",
-    backgroundColor: theme.palette.mode === "light" ? "#fcfcfb" : "#2b2b2b",
+    backgroundColor: 'transparent',
     border: "1px solid #ced4da",
     fontSize: 16,
     padding: "10px 12px",
@@ -23,22 +23,9 @@ export const BootstrapInput = styled(InputBase)(({ theme }) => ({
       "background-color",
       "box-shadow",
     ]),
-    // Use the system font instead of the default Roboto font.
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
     "&:focus": {
-      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
-      borderColor: theme.palette.primary.main,
+      boxShadow: `${alpha('#664de5', 0.25)} 0 0 0 0.2rem`,
+      borderColor: '#664de5',
     },
   },
 }));
@@ -49,7 +36,7 @@ const NameComponent = (props) => {
     const [displayName, setDisplayName] = useState('');
 
   return (
-    <Paper elevation={0}>
+    <Paper elevation={0} sx={{width: '90%'}}>
       <Stack
         component="form"
         sx={{
@@ -60,18 +47,18 @@ const NameComponent = (props) => {
         autoComplete="off"
       >
         <FormControl fullWidth margin="normal" variant="standard">
-          <InputLabel shrink htmlFor="bootstrap-input">
+          <InputLabel shrink htmlFor="bootstrap-input" classes={{root: 'font-bold color-black'}}>
             FullName
           </InputLabel>
           <BootstrapInput value={username} onChange={(e) => setUsername(e.target.value)} fullWidth margin="dense" placeholder="Steve Jobs" id="fullName-input" />
         </FormControl>
         <FormControl fullWidth margin="normal" variant="standard">
-          <InputLabel shrink htmlFor="bootstrap-input">
+          <InputLabel shrink htmlFor="bootstrap-input" classes={{root: 'font-bold color-black'}}>
             Display Name
           </InputLabel>
           <BootstrapInput value={displayName} onChange={(e) => setDisplayName(e.target.value)} placeholder="Steve" id="displayName-input" />
         </FormControl>
-        <Button onClick={() => {props.updateUserName({fullName: username, displayName: displayName})}} fullWidth margin="normal" variant="contained">Create Workspace</Button>
+        <Button sx={{backgroundColor: '#664de5'}} onClick={() => {props.updateUserName({fullName: username, displayName: displayName})}} fullWidth margin="normal" variant="contained">Create Workspace</Button>
       </Stack>
     </Paper>
   );

@@ -5,6 +5,8 @@
 .urlContainer .urlChip {
     height: 45px;
     width: 30%;
+    letter-spacing: 1px;
+    font-weight: 500;
     border-radius: 4px 0 0 4px;
     border: 1px solid #ced4da;
     border-right: none;

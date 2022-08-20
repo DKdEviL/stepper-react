@@ -16,7 +16,7 @@ const WorkSpaceComponent = (props) => {
     const [url, setUrl] = useState('');
 
   return (
-    <Paper elevation={0}>
+    <Paper elevation={0} sx={{width: '90%'}}>
       <Stack
         component="form"
         sx={{
@@ -27,7 +27,7 @@ const WorkSpaceComponent = (props) => {
         autoComplete="off"
       >
         <FormControl fullWidth margin="normal" variant="standard">
-          <InputLabel shrink htmlFor="bootstrap-input">
+          <InputLabel shrink htmlFor="bootstrap-input" classes={{root: 'font-bold color-black'}}>
             Workspace Name
           </InputLabel>
           <BootstrapInput
@@ -40,7 +40,7 @@ const WorkSpaceComponent = (props) => {
           />
         </FormControl>
         <FormControl fullWidth margin="normal" variant="standard">
-          <InputLabel shrink htmlFor="bootstrap-input">
+          <InputLabel shrink htmlFor="bootstrap-input" classes={{root: 'font-bold color-black'}}>
             Workspace URL (optional)
           </InputLabel>
           <Box
@@ -61,6 +61,7 @@ const WorkSpaceComponent = (props) => {
         <Button
           onClick={() => {props.updateWorkspace({name: name, url: url ? defaultURL+url : ''})}}
           fullWidth
+          sx={{backgroundColor: '#664de5'}}
           margin="normal"
           variant="contained"
         >
