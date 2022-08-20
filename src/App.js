@@ -90,10 +90,10 @@ function App() {
       {
         activeStep <= 2 &&
         <>
-        <Typography variant="h5" component="h3" mt={4} mb={1} sx={{letterSpacing: '1px', fontWeight: 'bold'}}>
+        <Typography variant="h5" component="h3" mt={4} mb={1} sx={{letterSpacing: '1px', fontWeight: 'bold', textAlign: 'center'}}>
         {appText[activeStep].primary}
       </Typography>
-      <Typography variant="body1" component="span"mt={1} mb={4} sx={{letterSpacing: '1px'}}>
+      <Typography variant="body1" component="span"mt={1} mb={4} sx={{letterSpacing: '1px', textAlign: 'center'}}>
         {appText[activeStep].secondary}
       </Typography>
         </>
