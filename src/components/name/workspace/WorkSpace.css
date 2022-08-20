@@ -1,0 +1,17 @@
+.urlContainer {
+    margin-top: 24px;
+}
+
+.urlContainer .urlChip {
+    height: 45px;
+    width: 30%;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #ced4da;
+    border-right: none;
+}
+.urlContainer .urlInput {
+    width: 70%;
+}
+.urlContainer .urlInput input {
+    border-radius: 0 4px 4px 0;
+}
