@@ -1,0 +1,12 @@
+
+.userList {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.userList .selectedItem {
+    background-color: transparent !important;
+}
+.userList .selectedItem .cardContainer {
+    border: 1px solid red;
+}
